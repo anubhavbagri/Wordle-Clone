@@ -6,7 +6,17 @@ class WordleLetterbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("A"),
+      width: 60,
+      height: 60,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black12,
+          width: 2,
+        ),
+      ),
     );
   }
 }
