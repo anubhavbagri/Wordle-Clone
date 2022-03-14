@@ -9,17 +9,24 @@ class WordleGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<List<Widget>> wordleRows = List.empty(growable: true);
+    final List<Row> wordleRows = List.empty(growable: true);
 
     for (int i = 0; i < rows; i++) {
-      wordleRows.add(List.empty(growable: true));
+      final List<WordleLetterbox> boxes = List.empty(growable: true);
       for (int j = 0; j < wordSize; j++) {
-        wordleRows[i].add(WordleLetterbox());
+        boxes.add(WordleLetterbox());
       }
+      wordleRows.add(Row(
+        mainAxisSize: MainAxisSize.min,
+        children: boxes,
+      ));
     }
 
     return Container(
-      child: Text('grid'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: wordleRows,
+      ),
     );
   }
 }
