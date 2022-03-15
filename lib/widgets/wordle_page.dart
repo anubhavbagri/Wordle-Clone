@@ -8,17 +8,19 @@ class WordlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   title: Text('WORDLE'),
-      // ),
-      body: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [WordleTitleBar(), WordleGrid(), WordleKeyboard()],
+    return SafeArea(
+      child: Scaffold(
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: Text('WORDLE'),
+        // ),
+        body: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [WordleTitleBar(), WordleGrid(), WordleKeyboard()],
+          ),
         ),
       ),
     );
