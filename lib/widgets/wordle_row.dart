@@ -3,14 +3,21 @@ import 'package:wordle_clone/widgets/wordle_letterbox.dart';
 
 class WordleRow extends StatelessWidget {
   final int wordSize;
-  const WordleRow({Key? key, required this.wordSize}) : super(key: key);
+  final String word;
+
+  const WordleRow({Key? key, required this.wordSize, required this.word})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final List<WordleLetterbox> boxes = List.empty(growable: true);
 
     for (int j = 0; j < wordSize; j++) {
-      boxes.add(WordleLetterbox());
+      if (word.length > j) {
+        boxes.add(WordleLetterbox(letter: word[j]));
+      } else {
+        boxes.add(WordleLetterbox());
+      }
     }
 
     return Row(
