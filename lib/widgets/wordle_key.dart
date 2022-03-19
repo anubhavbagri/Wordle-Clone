@@ -26,13 +26,12 @@ class WordleKey extends ConsumerWidget {
       );
     }
 
-    return GestureDetector(
+    return InkWell(
       child: Container(
         width: width,
-        height: 60,
+        height: 55,
         alignment: Alignment.center,
-        // padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.all(4),
+        margin: const EdgeInsets.all(3),
         decoration: const BoxDecoration(
           color: Color.fromARGB(44, 44, 44, 44),
           borderRadius: BorderRadius.all(
