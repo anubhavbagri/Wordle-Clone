@@ -18,7 +18,7 @@ class WordleKey extends ConsumerWidget {
     } else {
       width = 40;
       keyCap = Text(
-        letter,
+        letter.toUpperCase(),
         style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,

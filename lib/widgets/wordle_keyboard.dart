@@ -11,15 +11,15 @@ class WordleKeyboard extends StatelessWidget {
       children: [
         Row(
           mainAxisSize: MainAxisSize.min,
-          children: [for (var i in "QWERTYUIOP".split("")) WordleKey(i)],
+          children: [for (var i in "qwertyuiop".split("")) WordleKey(i)],
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
-          children: [for (var i in "ASDFGHJKL".split("")) WordleKey(i)],
+          children: [for (var i in "asdfghjkl".split("")) WordleKey(i)],
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
-          children: [for (var i in "_ZXCVBNM<".split("")) WordleKey(i)],
+          children: [for (var i in "_zxcvbnm<".split("")) WordleKey(i)],
         )
       ],
     );
