@@ -20,7 +20,18 @@ class WordleGrid extends ConsumerWidget {
       if (gameState.attempts.length > i) {
         word = gameState.attempts[i];
       }
-      rows.add(WordleRow(wordSize: wordSize, word: word));
+      var attempted = false;
+      if (gameState.attempted > i) {
+        attempted = true;
+      }
+      rows.add(
+        WordleRow(
+          wordSize: wordSize,
+          correctWord: gameState.correctWord,
+          word: word,
+          attempted: attempted,
+        ),
+      );
     }
 
     return Container(
