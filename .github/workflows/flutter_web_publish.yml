@@ -1,0 +1,17 @@
+name: Flutter Web
+on:
+  push:
+    branches:
+      - stable
+
+jobs:
+  build:
+    name: Build Web and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter build web --release
