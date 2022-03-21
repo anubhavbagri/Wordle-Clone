@@ -18,7 +18,7 @@ class WordleLetterbox extends StatelessWidget {
     if (!attempted) {
       return null;
     }
-    print("$correctWord $letter $pos");
+    // print("$correctWord $letter $pos");
     if (!correctWord.contains(letter)) return Colors.grey;
     if (correctWord.indexOf(letter) == pos) return Colors.green;
     return Colors.amber;
