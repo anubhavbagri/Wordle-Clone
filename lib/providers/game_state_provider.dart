@@ -74,6 +74,11 @@ class GameStateNotifier extends StateNotifier<GameState> {
         return;
       }
 
+      if (!state.validWords.contains(currentAttempt)) {
+        print("not in valid words list");
+        return;
+      }
+
       state = state.clone(attempted: state.attempted + 1);
     } else if (key == "<") {
       // handle backpress
