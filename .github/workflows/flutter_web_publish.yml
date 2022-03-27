@@ -8,16 +8,16 @@ jobs:
   build:
     name: Build Web and Deploy
     runs-on: ubuntu-latest
-#    env:
+    env:
 #      BASE_HREF: /${{ github.event.repository.name }}/
+      BASE_HREF: /
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '2.10.2'
           channel: 'stable'
-#      - run: flutter build web --release --web-renderer html --base-href $BASE_HREF
-      - run: flutter build web --release --web-renderer html
+      - run: flutter build web --release --web-renderer html --base-href $BASE_HREF
       - name: Deply gh-pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/stable' }}
